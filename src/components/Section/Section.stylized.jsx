@@ -1,12 +1,11 @@
 import styled from '@emotion/styled';
 
 export const SectionStyle = styled.section`
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 `;
 
 export const SectionTitle = styled.h2`
-  margin-bottom: 20px;
-  text-align: center;
-  text-transform: uppercase;
+  text-align: left;
+  margin-bootom: 20px;
 `;

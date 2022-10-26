@@ -1,17 +1,20 @@
-import React from 'react';
+import PropTypes from 'prop-types';
+import { ButtonContainer, Button } from './FeedbackOptions.stylized';
 
 export const FeedbackOptions = ({ increment }) => (
-  <div>
-    <button name="good" type="button" onClick={increment}>
+  <ButtonContainer>
+    <Button name="good" type="button" onClick={increment}>
       Good
-    </button>
-
-    <button name="neutral" type="button" onClick={increment}>
+    </Button>
+    <Button name="neutral" type="button" onClick={increment}>
       Neutral
-    </button>
-
-    <button name="bad" type="button" onClick={increment}>
+    </Button>
+    <Button name="bad" type="button" onClick={increment}>
       Bad
-    </button>
-  </div>
+    </Button>
+  </ButtonContainer>
 );
+
+FeedbackOptions.propTypes = {
+  increment: PropTypes.func.isRequired,
+};
