@@ -14,7 +14,11 @@ export const Statistics = ({
     <StatisticItem>Bad: {bad}</StatisticItem>
     <StatisticItem>Total: {total}</StatisticItem>
     <StatisticItem>
-      Positive feedback: {Math.round(positivePercentage).toFixed()}%
+      Positive feedback:{' '}
+      {Number.isNaN(positivePercentage)
+        ? 0
+        : Math.round(positivePercentage).toFixed()}
+      %
     </StatisticItem>
   </StatisticList>
 );

@@ -1,20 +1,24 @@
 import PropTypes from 'prop-types';
 import { ButtonContainer, Button } from './FeedbackOptions.stylized';
 
-export const FeedbackOptions = ({ increment }) => (
+export const FeedbackOptions = ({ options, handleCounter }) => (
   <ButtonContainer>
-    <Button name="good" type="button" onClick={increment}>
-      Good
-    </Button>
-    <Button name="neutral" type="button" onClick={increment}>
-      Neutral
-    </Button>
-    <Button name="bad" type="button" onClick={increment}>
-      Bad
-    </Button>
+    {options.map(option => (
+      <Button
+        type="button"
+        key={option}
+        onClick={() => {
+          handleCounter(option);
+        }}
+        name={option}
+      >
+        {option.toUpperCase()}
+      </Button>
+    ))}
   </ButtonContainer>
 );
 
 FeedbackOptions.propTypes = {
-  increment: PropTypes.func.isRequired,
+  handleCounter: PropTypes.func.isRequired,
+  options: PropTypes.array,
 };
